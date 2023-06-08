@@ -10,17 +10,17 @@ namespace Activity_Week3
     {
         private int currentBal;
 
-        public void Balance() {
-            currentBal = 50000;                
-            
+        public Balance() {
+            currentBal = 50000;
+
         }
 
-        public String getBalance(){
-           return $"\nYour current balance is: {currentBal}";
+        public int getBalance() {
+            return currentBal;
         }
 
-        public void setBalance(int bal){
-            currentBalance = bal;
+        public void setBalance(int bal) {
+            currentBal = bal;
         }
     }
 }
