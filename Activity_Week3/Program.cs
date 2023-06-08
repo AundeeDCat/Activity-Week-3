@@ -16,52 +16,39 @@ namespace Activity_Week3
 
             int PIN = 12345;
 
-            string inputPIN = "";
+            int inputPIN;
             int wrongCount = 0;
 
             Console.WriteLine("Welcome to Console ATM.");
             Console.WriteLine("________________________________");
             Console.WriteLine("");
 
-            while (wrongCount < 3)
-            {
+            while (wrongCount < 3) {
 
-                while (confirmPin == false)
-                {
+                while (confirmPin == false) {
                     Console.Write("Please input your PIN: ");
-                    inputPIN = Console.ReadLine();
+                    inputPIN = Convert.ToInt32(Console.ReadLine());
                     Console.Write("Is the above PIN correct?(Y/N): ");
                     responsePIN = Console.ReadLine();
 
-                    switch (responsePIN)
-                    {
+                    switch (responsePIN.ToUpper()) {
                         case "Y":
-                            confirmPin = true;
-                            break;
-
-                        case "y":
                             confirmPin = true;
                             break;
 
                         case "N":
                             confirmPin = false;
                             break;
-
-                        case "n":
-                            confirmPin = false;
-                            break;
                     }
                 }
 
-                if (PIN == Convert.ToInt32(inputPIN))
-                {
-                    while (responseMenu != "Exit")
-                    {
+                if (PIN == inputPIN) {
+                    while (responseMenu != "Exit") {
                         Console.WriteLine("");
                         Console.WriteLine("What would you like to do?");
-                        Console.WriteLine("(1: Transfer, 2: Withdraw, 3: Change Pin, 4: Check Balance, 5: Pay Bills, 6: Exit)");
-                        Console.WriteLine("________________________________");
-                        Console.WriteLine("");
+                        Console.WriteLine("(1: Transfer,\t4: Check Balance,\n2: Withdraw,\t5: Pay Bills,\n3: Change Pin,\t6: Exit)");
+                        /*Console.WriteLine("(1: Transfer, 2: Withdraw, 3: Change Pin, 4: Check Balance, 5: Pay Bills, 6: Exit)");*/
+                        Console.WriteLine("________________________________\n");
 
                         responseMenu = Console.ReadLine();
 
@@ -115,7 +102,10 @@ namespace Activity_Week3
 
                         else if (responseMenu == "4")
                         {
-                            var balance = new Balance();
+                            Balance balance = new Balance();
+
+                            balance.getBalance();
+
                             balance.run();
                         }
 
@@ -130,16 +120,14 @@ namespace Activity_Week3
                             Environment.Exit(0);
                         }
 
-                        else
-                        {
+                        else {
                             Console.WriteLine("We do not have that feature. Please make sure your input is correct.");
                         }
                     }
 
                 }
 
-                else
-                {
+                else {
                     Console.WriteLine("PIN is incorrect. Try again.");
                     wrongCount = wrongCount+ 1;
                     confirmPin = false;
