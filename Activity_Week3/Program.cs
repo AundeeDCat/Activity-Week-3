@@ -13,6 +13,7 @@ namespace Activity_Week3
             Boolean confirmPin = false;
             string responsePIN = "N";
             string responseMenu = "";
+            Balance balance = new Balance();
 
             int PIN = 12345;
 
@@ -45,24 +46,53 @@ namespace Activity_Week3
                 if (PIN == inputPIN) {
                     while (responseMenu != "Exit") {
                         Console.WriteLine("");
-                        Console.WriteLine("What would you like to do?");
-                        Console.WriteLine("(1: Transfer,\t4: Check Balance,\n2: Withdraw,\t5: Pay Bills,\n3: Change Pin,\t6: Exit)");
-                        /*Console.WriteLine("(1: Transfer, 2: Withdraw, 3: Change Pin, 4: Check Balance, 5: Pay Bills, 6: Exit)");*/
-                        Console.WriteLine("________________________________\n");
+                        Console.WriteLine("---What would you like to do?---");
+                        Console.WriteLine("(1: Transfer     4: Check Balance)");
+                        Console.WriteLine("(2: Withdraw     5: Pay Bills)");
+                        Console.WriteLine("(3: Change Pin   6: Exit")
+                        Console.WriteLine("___________________________________\n");
 
                         responseMenu = Console.ReadLine();
 
-                        if (responseMenu == "1") 
-                        {
+                        if (responseMenu == "1") {
                             var transfer = new Transfer();
                             transfer.run();
 
                         }
 
-                        else if (responseMenu == "2") 
-                        {
-                            var withdraw = new Withdraw();
-                            withdraw.run();
+                        else if (responseMenu == "2") {
+                            //var withdraw = new Withdraw();
+                            //withdraw.run();
+
+                            Console.Write("Enter amount: ");
+                            int amount = Convert.ToInt32(Console.ReadLine());
+
+                            Console.Write("Enter PIN: ");
+                            int withdrawPIN = Convert.ToInt32(Console.ReadLine());
+
+                            if (wrongCount > 2 && withdrawPIN != PIN) { 
+                                Console.WriteLine("Too many retries, program will now close.")
+                                Console.ReadKey();
+                                Environment.Exit(0);
+                            }
+
+                            else if (withdrawPIN != PIN) {
+                                Console.Write("Wrong PIN, try again: ");
+                                withdrawPIN = Convert.ToInt32(Console.ReadLine);
+                                wrongCount++;
+                            }
+
+                            else {
+                                Console.WriteLine("1. Confirm\n2. Cancel");
+                                int input = Convert.ToInt32(Console.ReadLine());
+
+                                if (amount > balance.getBalance() && input == 1)
+                                    Console.WriteLine("Insufficient Balance");
+
+                                else if (input == 1)
+                                    printReceipt(amount);
+                            }
+
                         }
 
                         else if (responseMenu == "3") // AUNDEE YOUR OVER HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEER
@@ -100,23 +130,17 @@ namespace Activity_Week3
 
                         }
 
-                        else if (responseMenu == "4")
-                        {
-                            Balance balance = new Balance();
-
+                        else if (responseMenu == "4") {
                             balance.getBalance();
 
-                            balance.run();
                         }
 
-                        else if (responseMenu == "5")
-                        {
+                        else if (responseMenu == "5") {
                             var bills = new Bills();
                             bills.run();
                         }
 
-                        else if (responseMenu == "6")
-                        {
+                        else if (responseMenu == "6") {
                             Environment.Exit(0);
                         }
 
@@ -138,6 +162,14 @@ namespace Activity_Week3
             }
 
             Environment.Exit(0);
+        }
+        static void printReceipt(int amount) {
+            Console.WriteLine("---------------------");
+            Console.WriteLine("-------Receipt-------\n\n");
+            Console.WriteLine("Amount: " + amount);
+            Console.WriteLine("Date and Time: " + DateTime.Now);
+            Console.WriteLine("\n\n---------------------");
+            Console.WriteLine("---------------------");
         }
     }
 }
