@@ -12,27 +12,32 @@ namespace Activity_Week3
         public string inputNewPin = "New";
         public string confirmNewPin = "Confirm";
 
-        public void title() {
+        public void title()
+        {
              
             Console.WriteLine("");
             Console.WriteLine("Welcome to Changing PIN");
             Console.WriteLine("________________________________");
             Console.WriteLine("");
         }
-        public void oldPinConfirm() {
+        public void oldPinConfirm()
+        {
             Console.Write("Input your old PIN: ");
             inputOldPin = Console.ReadLine();
             
+            
         }
 
-        public void newPinInput() {
+        public void newPinInput()
+        {
             Console.Write("Input your new PIN: ");
             inputNewPin = Console.ReadLine();
 
 
         }
 
-        public void newPinConfirm() {
+        public void newPinConfirm()
+        {
             Console.Write("Confirm new PIN: ");
             confirmNewPin = Console.ReadLine();
 

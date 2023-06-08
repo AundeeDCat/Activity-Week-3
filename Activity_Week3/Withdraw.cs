@@ -6,21 +6,25 @@ using System.Threading.Tasks;
 
 namespace Activity_Week3
 {
-    internal class Withdraw
+    public class Withdraw
     {
+        public static int realPin = 1234;
+        public static int balance;
+        public static int amount;
+
         public void run()
         {
-            /*int num = 2;
-            int menu;
+            int num = 2;
+            //int menu;
             Console.Write("Enter PIN: ");
-            int realPin = 1234;
+            
             int pin = Convert.ToInt32(Console.ReadLine());
-            int balance = 10000;
+            
 
             while (pin != realPin)
             {
                 if (num > 0)
-                { 
+                {
                     Console.Write("Wrong PIN, try again: ");
                     pin = Convert.ToInt32(Console.ReadLine());
                     num--;
@@ -32,6 +36,7 @@ namespace Activity_Week3
                 }
             }
 
+            /*
             if (pin == realPin)
             {
                 Console.WriteLine("1. Transfer Money ");
@@ -41,59 +46,76 @@ namespace Activity_Week3
                 Console.WriteLine("5. Pay Bills ");
                 Console.WriteLine("6. Exit ");
                 Console.Write("Choose your action: ");
-                menu = Convert.ToInt32(Console.ReadLine());
+                menu = Convert.ToInt32(Console.ReadLine());         
 
                 // Choosing withdraw
                 if (menu == 2)
-                {*/
-            // Enter amount
-            Console.Write("Enter amount: ");
-            int amount = Convert.ToInt32(Console.ReadLine());
+                {                                       */
+                    // Enter amount
+                    Console.Write("Enter amount: ");
+                    amount = Convert.ToInt32(Console.ReadLine());
 
-            // Enter PIN
-            Console.Write("Enter PIN: ");
-            int wdPIN = Convert.ToInt32(Console.ReadLine());
+                    // Enter PIN
+                    Console.Write("Enter PIN: ");
+                    int wdPIN = Convert.ToInt32(Console.ReadLine());
 
-            // To keep track of number of attempts for PINs
-            while (num >= 0) {
+                    // To keep track of number of attempts for PINs
+                    while (num >= 0)
+                    {
 
-                // Will exit if no more number of attempts
-                if (num == 0 && wdPIN != realPin) {
-                    Console.WriteLine("Too many retries, bye!!!!!");
-                    break;
-                }
+                        // Will exit if no more number of attempts
+                        if (num == 0 && wdPIN != realPin)
+                        {
+                            Console.WriteLine("Too many retries, bye!!!!!");
+                            break;
+                        }
 
-                // Checking if PIN is wrong
-                else if (wdPIN != realPin) {
-                    Console.Write("Wrong PIN, try again: ");
-                    wdPIN = Convert.ToInt32(Console.ReadLine());
-                    num--;
-                }
+                        // Checking if PIN is wrong
+                        else if (wdPIN != realPin)
+                        {
+                            Console.Write("Wrong PIN, try again: ");
+                            wdPIN = Convert.ToInt32(Console.ReadLine());
+                            num--;
+                        }
 
-                // This will display "Confirm, Cancel" is there is no problem with the PIN
-                else {
-                    Console.WriteLine("1. Confirm\n2. Cancel");
-                    int input = Convert.ToInt32(Console.ReadLine());
+                        // This will display "Confirm, Cancel" is there is no problem with the PIN
+                        else
+                        {
+                            Console.WriteLine("1. Confirm\n2. Cancel");
+                            int input = Convert.ToInt32(Console.ReadLine());
 
-                    if (amount > balance && input == 1) {
-                        Console.WriteLine("Insufficient Balance");
-                        break; // Code here to go back to menu
-                    }
+                            if (amount > balance && input == 1)
+                            {
+                                Console.WriteLine("Insufficient Balance");
+                                break; // Code here to go back to menu
+                            }
 
-                    // Prints Receipt if Confirm is chosen
-                    else if (input == 1) {
-                        printReceipt(amount);
-                        break;
-                    }
+                            // Prints Receipt if Confirm is chosen
+                            else if (input == 1)
+                            {
+                                Console.WriteLine("---------------------");
+                                Console.WriteLine("-------Receipt-------\n\n");
+                                Console.WriteLine("Amount: " + amount);
+                                Console.WriteLine("Date and Time: " + DateTime.Now);
+                                Console.WriteLine("\n\n---------------------");
+                                Console.WriteLine("---------------------");
+                                break;
+                            }
 
-                    // (Cancel) Else it goes back to the menu
-                    else
-                        break;
-                    // change break; to code to return to menu
+                            // (Cancel) Else it goes back to the menu
+                            else
+                                break;
+                            // change break; to code to return to menu
+                        }
+                    //}
                 }
             }
+            //Console.ReadKey();
         }
-        static void printReceipt(int amount) {
+
+    /*
+        static void printReceipt(int amount)
+        {
             Console.WriteLine("---------------------");
             Console.WriteLine("-------Receipt-------\n\n");
             Console.WriteLine("Amount: " + amount);
@@ -101,6 +123,6 @@ namespace Activity_Week3
             Console.WriteLine("\n\n---------------------");
             Console.WriteLine("---------------------");
         }
-    }
+    }*/
 }
 

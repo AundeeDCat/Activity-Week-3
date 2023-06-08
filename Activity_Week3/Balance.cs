@@ -6,21 +6,12 @@ using System.Threading.Tasks;
 
 namespace Activity_Week3
 {
-    internal class Balance
+    public class Balance
     {
-        private int currentBal;
-
-        public Balance() {
-            currentBal = 50000;
-
-        }
-
-        public int getBalance() {
-            return currentBal;
-        }
-
-        public void setBalance(int bal) {
-            currentBal = bal;
+        public static int currentBal = 10000;
+        public void run()
+        {
+            Console.WriteLine($"\nYour current balance is: {currentBal}");
         }
     }
 }

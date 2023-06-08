@@ -6,31 +6,33 @@ using System.Threading.Tasks;
 
 namespace Activity_Week3
 {
-    internal class Transfer
+    public class Transfer
     {
-        public void run() {
+
+        public static int amount;
+        public void run()
+        {
             Console.WriteLine("Transfer Money");
 
             Console.Write("Account Number: ");
             int account_number = Convert.ToInt32(Console.ReadLine());
             Console.Write("Account Name: ");
-            string name = Convert.ToString(Console.ReadLine());
-            Console.Write("Amount: ");
-            int amount = Convert.ToInt32(Console.ReadLine());
+            string Name = Convert.ToString(Console.ReadLine());
+            Console.Write("Amount :");
+            amount = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("1. Deposit");
             Console.WriteLine("2. Cancel");
             int typenum = Convert.ToInt32(Console.ReadLine());
 
-            if (typenum == 1) {
-                Console.WriteLine("---------------------");
-                Console.WriteLine("---------------------\n");
-                Console.WriteLine("Name " + name);
-                Console.WriteLine("Account Number: " + account_number);
+            if (typenum == 1)
+            {
                 Console.WriteLine("Your deposit is " + amount);
                 Console.WriteLine("Transfer is done.");
-                Console.WriteLine("---------------------");
-                Console.WriteLine("---------------------\n");
+            }
+            else
+            {
+
             }
         }
     }

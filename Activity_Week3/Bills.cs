@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Activity_Week3
 {
-    internal class Bills
+    public class Bills
     {
+        public static int balance;
         public void run()
         {
-            int balance = 10000;
         loop:
-            
+
             Console.Write("Enter your payment: ");
             int bills = Convert.ToInt32(Console.ReadLine());
             int sum = balance - bills;
