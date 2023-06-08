@@ -23,14 +23,9 @@ namespace Activity_Week3
             Console.WriteLine("2. Cancel");
             int typenum = Convert.ToInt32(Console.ReadLine());
 
-            if (typenum == 1)
-            {
+            if (typenum == 1) {
                 Console.WriteLine("Your deposit is " + amount);
                 Console.WriteLine("Transfer is done.");
-            }
-            else
-            {
-
             }
         }
     }

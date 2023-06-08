@@ -8,11 +8,19 @@ namespace Activity_Week3
 {
     internal class Balance
     {
-        public void run()
-        {
-            int currentBal = 10000;
+        private int currentBal;
 
-            Console.WriteLine($"\nYour current balance is: {currentBal}");
+        public void Balance() {
+            currentBal = 50000;                
+            
+        }
+
+        public String getBalance(){
+           return $"\nYour current balance is: {currentBal}";
+        }
+
+        public void setBalance(int bal){
+            currentBalance = bal;
         }
     }
 }

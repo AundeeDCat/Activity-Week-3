@@ -6,3 +6,8 @@ C:\Users\Student\source\repos\Activity_Week3\Activity_Week3\obj\Debug\Activity_W
 C:\Users\Student\source\repos\Activity_Week3\Activity_Week3\obj\Debug\Activity_Week3.csproj.CoreCompileInputs.cache
 C:\Users\Student\source\repos\Activity_Week3\Activity_Week3\obj\Debug\Activity_Week3.exe
 C:\Users\Student\source\repos\Activity_Week3\Activity_Week3\obj\Debug\Activity_Week3.pdb
+E:\Isidro Files\Khyle\College shait\Computer programming 1\AundeeDCat\Activity-Week-3\Activity_Week3\obj\Debug\Activity_Week3.csproj.AssemblyReference.cache
+E:\Isidro Files\Khyle\College shait\Computer programming 1\AundeeDCat\Activity-Week-3\Activity_Week3\obj\Debug\Activity_Week3.csproj.SuggestedBindingRedirects.cache
+E:\Isidro Files\Khyle\College shait\Computer programming 1\AundeeDCat\Activity-Week-3\Activity_Week3\obj\Debug\Activity_Week3.csproj.CoreCompileInputs.cache
+E:\Isidro Files\Khyle\College shait\Computer programming 1\AundeeDCat\Activity-Week-3\Activity_Week3\obj\Debug\Activity_Week3.exe
+E:\Isidro Files\Khyle\College shait\Computer programming 1\AundeeDCat\Activity-Week-3\Activity_Week3\obj\Debug\Activity_Week3.pdb

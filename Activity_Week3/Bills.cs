@@ -12,12 +12,12 @@ namespace Activity_Week3
         {
             int balance = 10000;
         loop:
-
+            
             Console.Write("Enter your payment: ");
             int bills = Convert.ToInt32(Console.ReadLine());
             int sum = balance - bills;
             balance = sum;
-            Console.WriteLine("your balance is now " + sum);
+            Console.WriteLine("Your balance is now " + sum);
         }
     }
 }
