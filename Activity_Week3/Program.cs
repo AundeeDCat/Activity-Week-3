@@ -92,7 +92,7 @@ namespace Activity_Week3
                         else if (responseMenu == "2") 
                         {
                             transfer.run();
-                            currentBal = currentBal-Transfer.amount;
+                            currentBal = currentBal - Transfer.amount;
                         }
 
                         else if (responseMenu == "3") 
