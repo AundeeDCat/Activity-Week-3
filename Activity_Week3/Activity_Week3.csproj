@@ -46,7 +46,7 @@
     <Compile Include="Balance.cs" />
     <Compile Include="Bills.cs" />
     <Compile Include="Change PIN.cs" />
-    <Compile Include="Menu.cs" />
+    <Compile Include="Deposit.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transfer.cs" />

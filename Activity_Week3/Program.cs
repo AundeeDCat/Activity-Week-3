@@ -17,6 +17,7 @@ namespace Activity_Week3
             Withdraw withdraw = new Withdraw();
             Balance balance = new Balance();
             Bills bills = new Bills();
+            Deposit deposit = new Deposit();
             Transfer transfer = new Transfer();
 
 
@@ -71,29 +72,36 @@ namespace Activity_Week3
                         Bills.balance = currentBal;
                         Withdraw.balance = currentBal;
                         Balance.currentBal = currentBal;
+                        Deposit.balance = currentBal;
 
 
                         Console.WriteLine("");
                         Console.WriteLine("What would you like to do?");
-                        Console.WriteLine("(1: Transfer, 2: Withdraw, 3: Change Pin, 4: Check Balance, 5: Pay Bills, 6: Exit)");
+                        Console.WriteLine("(1: Deposit 2: Transfer, 3: Withdraw, 4: Change Pin, 5: Check Balance, 6: Pay Bills, 7: Exit)");
                         Console.WriteLine("________________________________");
                         Console.WriteLine("");
 
                         responseMenu = Console.ReadLine();
 
-                        if (responseMenu == "1") 
+                        if (responseMenu == "1")
+                        {
+                            deposit.run();
+                            currentBal = Deposit.balance;
+                        }
+
+                        else if (responseMenu == "2") 
                         {
                             transfer.run();
                             currentBal = currentBal-Transfer.amount;
                         }
 
-                        else if (responseMenu == "2") 
+                        else if (responseMenu == "3") 
                         {
                             withdraw.run();
                             currentBal = currentBal - Withdraw.amount;
                         }
 
-                        else if (responseMenu == "3") 
+                        else if (responseMenu == "4") 
                         {
                             var changePin = new Change_PIN(); 
                             changePin.title();
@@ -129,18 +137,18 @@ namespace Activity_Week3
 
                         }
 
-                        else if (responseMenu == "4")
+                        else if (responseMenu == "5")
                         {
                             balance.run();
                         }
 
-                        else if (responseMenu == "5")
+                        else if (responseMenu == "6")
                         {
                             bills.run();
                             currentBal = Bills.balance;
                         }
 
-                        else if (responseMenu == "6")
+                        else if (responseMenu == "7")
                         {
                             Environment.Exit(0);
                         }
